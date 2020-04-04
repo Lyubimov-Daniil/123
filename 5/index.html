@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- <script type="text/javascript" src="/696CF190-6DC5-184E-9F88-F62DE54B8851/main.js" charset="UTF-8"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Любимов/В данной работе мне помог Сабиржан Бекзат, так как, сам выполнить её не смог. Из-за этого работа  выглядит похожей. </title>
+</head>
+<body>
+    <header>
+        <h1 class="Zagolovok">Калькулятор расчета зарплаты</h1>                                                                                                                                                                                                                                                                                                                                                   
+    </header> 
+    <div id="app">
+        <form @submit.prevent="checkForm" method="POST">
+        <div>
+        <p v-if="errors.length" class = "err">
+            <b> Исправьте  ошибки:</b>
+            <ul>
+              <li v-for="error in errors">{{ error }}</li>
+            </ul>
+          </p>
+        
+          <div>
+            <div class="grid">
+                    <div class="first">
+                        <label class="labl">- оклада <input type="text" class="inp ip1" v-model="txt1"></label><br>
+                        <label class="labl">- премии<input type="text" class="inp ip2" v-model="txt2"></label><br>
+                        <label class="labl">- районного коэффициента <input type="text" class="inp ip3 " v-model="txt3"></label><br>
+                        <label class="labl">- количества рабочих дней в месяце<input type="text" class="inp ip4" v-model="txt4"></label><br>
+                        <label class="labl">- кол-тва отработанных дней в месяце<input type="text" class="inp ip5" v-model="txt5"></label><br>
+                    </div>
+                    <button class="btn" @click="calc1()">Расчет ЗП</button>
+                    
+                    <div>
+                        
+                        <label class="labl">- полной зарплаты <textarea cols="19" rows="1" readonly class="txt txt1" v-model="result1">{{result1}}</textarea> </label><br>
+                        <label class="labl">- НДФЛ 13% <textarea cols="19" rows="1" readonly class="txt txt2" v-model="result2">{{result2}}</textarea> </label><br>
+                        <label class="labl">-  зарплаты на руки<textarea cols="19" rows="1" readonly class="txt txt3" v-model="result3">{{result3}}</textarea> </label><br>                         
+                    </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+    <footer class="down">
+    </footer>
+</body>
+    <script src="script.js"></script>
+</html>

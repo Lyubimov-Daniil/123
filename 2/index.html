@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Любимов</title>
+
+</head>
+<body>
+<script>
+//задание 1
+var result = 1;
+function power(chislo, stepen) {
+
+for (var i = 0; i < stepen; i++) {
+result = result * chislo;
+}
+return result
+}
+
+var x = power(2, 10);
+document.write(x);
+</script>
+
+<script>
+//задание 2
+function compare(x) {
+
+return function (y) {
+if (y > x) {
+return (true);
+}
+
+else if (y < x) {
+return (false);
+}
+
+else {
+return null;
+}
+}
+}
+var result = compare(5);
+document.write(result(5));
+</script>
+
+<script>
+//задание 3
+function inArray(Where, Find) {
+var arrNew = Where.split(' ');
+var res;
+
+for (var i = 0; i < arrNew.length; i++) {
+if (arrNew[i] == Find) {
+res = true;
+}
+}
+
+if (res == undefined)
+{
+res = false;
+}
+return res;
+}
+var str = '999999';
+var toSearch = '999999';
+
+document.write(inArray(str, toSearch));
+</script>
+
+<script>
+//задание 4
+
+var book1 = {};
+
+book1.title = 'Название';
+book1.pubYear = '2004';
+book1.price = '6000';
+book1.show = function () {
+console.log(book1.title + "-" + book1.price);
+}
+
+function showBook() {
+console.log(this.title + "-" + this);
+}
+book1.show();
+
+var book2 = {
+title: 'Название 2',
+pubYear: '2005 ',
+price: '50000 '
+}
+book2.show = function () {
+console.log(book2.title + "-" + book2.price);
+}
+
+function showBook() {
+console.log(this.title + "-" + this);
+}
+book2.show();
+
+for (var o in book1) {
+document.write(o + "-" + book1[o]);
+document.write('<br>');
+}
+
+document.write('<br>');
+
+for (var o in book2) {
+document.write(o + "-" + book2[o]);
+document.write('<br>');
+}
+</script>
+
+<script>
+//задание 5(1)
+var a = [5, 12];
+var b = [];
+a[99] = 7;
+
+for (var x in a) {
+b = Math.pow(a[x],2);
+document.write(b);
+}
+</script>
+
+
+<p>задание5</p>
+<script>
+    
+//задание 5 (2)
+
+var a = [5, 12];
+var b = [];
+a[99] = 7;
+
+var length = a.length;
+var num;
+
+for (var i = 0; i < length; i++) {
+num = a[i];
+if (num != null) {
+b.push(num * num);
+}
+}
+
+document.write(b);
+</script>
+
+<script>
+// задание 6
+var text = 'Мы знаем, что монохромный цвет - это градации серого';
+var txt = 'хром';
+var word;
+
+var part = text.indexOf(txt);
+var firstSpace = text.lastIndexOf(' ', part);
+var nextSpace = text.indexOf(' ', part);
+
+word = text.slice(firstSpace, nextSpace);
+document.write(word);
+
+</script>
+
+<script>
+// задание 7
+s1 = "25-02-2012";
+s2 = "25-2-2012";
+s3 = "01-12-2011";
+s4 = "2-12-1978";
+var result = /^([0]?[1-9]|[1|2][0-9]|[3][0|1])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4}|[0-9]{2})$/.test(s4);
+
+document.write(result);
+
+</script>
+
+<script>
+// задание 8
+function Book(title, pubYear, price){
+this.title = title;
+this.pubYear = pubYear;
+this.price = price;
+}
+var book1 = new Book("Prince Persii ", 1990 , 210);
+var book2 = new Book(' dfsfsd ', 23 , 3434);
+Book.prototype.show = function(){
+document.write(this.title);
+document.write(this.pubYear);
+document.write(this.price);
+}
+book1.show();
+book2.show();
+
+</script>
+
+<script>
+// задание 9
+function getDate(date){
+let mydate = '25-02-2012';
+return new Date(mydate.replace(/^([0]?[1-9]|[1|2][0-9]|[3][0|1])[-]([0]?[1-9]|[1][0-2])[-]([0-9]{4}|[0-9]{2})$/, '$3-$2-$1'));
+}
+console.log(mydate.toDateString());
+
+</script>
+    
+</body>
+</html>
